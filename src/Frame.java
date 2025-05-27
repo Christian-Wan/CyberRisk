@@ -4,9 +4,17 @@ public class Frame extends JFrame implements Runnable {
 
     private Engine engine;
     private Thread windowThread;
+    private final int FRAMEWIDTH = 1500;
+    private final int FRAMEHEIGHT = 900;
 
     public Frame() {
+        engine = new Engine(this);
+
         this.setTitle("Cyber Risk");
+        this.setSize(FRAMEWIDTH, FRAMEHEIGHT);
+        this.setLocation(100, 100);
+        this.setResizable(false);
+        this.setVisible(true);
         startThread();
     }
 
