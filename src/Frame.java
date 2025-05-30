@@ -9,7 +9,7 @@ public class Frame extends JFrame implements Runnable {
 
     public Frame() {
         engine = new Engine(this);
-
+        this.add(engine.getPlayScreen());
         this.setTitle("Cyber Risk");
         this.setSize(FRAMEWIDTH, FRAMEHEIGHT);
         this.setLocation(100, 100);
@@ -32,7 +32,8 @@ public class Frame extends JFrame implements Runnable {
         while(true) {
 
             //add updating and repainting
-
+            engine.getPlayScreen().repaint();
+            engine.getPlayScreen().update();
 
             try {
                 double remainingTIme = nextDrawTime - System.nanoTime();
