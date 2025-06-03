@@ -47,7 +47,7 @@ public class PlayScreen extends JPanel implements MouseListener {
             g.drawRect(pick3.x, pick3.y, pick1.width, pick1.height);
         }
         else {
-            g.drawString("Player " + activePlayer + "'s Turn", 500, 50);
+            g.drawString("Player " + activePlayer + "'s Turn", 700, 50);
             g.drawRect(finishButton.x, finishButton.y, finishButton.width, finishButton.height);
             for (Territory territory: engine.getTerritories()) {
                 territory.draw(g2);
