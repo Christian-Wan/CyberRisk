@@ -6,40 +6,6 @@ public class Questions {
         ATTACK, DEFENSE
     }
 
-    public static class Question {
-        private String questionText;
-        private List<String> choices;
-        private int correctAnswerIndex;
-        private QuestionType type;
-
-        public Question(String questionText, List<String> choices, int correctAnswerIndex, QuestionType type) {
-            this.questionText = questionText;
-            this.choices = choices;
-            this.correctAnswerIndex = correctAnswerIndex;
-            this.type = type;
-        }
-
-        public String getQuestionText() {
-            return questionText;
-        }
-
-        public List<String> getChoices() {
-            return choices;
-        }
-
-        public int getCorrectAnswerIndex() {
-            return correctAnswerIndex;
-        }
-
-        public QuestionType getType() {
-            return type;
-        }
-
-        public boolean isCorrect(int userAnswerIndex) {
-            return userAnswerIndex == correctAnswerIndex;
-        }
-    }
-
     private List<Question> attackQuestions;
     private List<Question> defenseQuestions;
     private Random random;

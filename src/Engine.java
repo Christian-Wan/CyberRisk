@@ -10,6 +10,7 @@ public class Engine {
     private ArrayList<Territory> territories = new ArrayList<Territory>();
     private ArrayList<PlayerInfo> players = new ArrayList<PlayerInfo>();
     private PlayScreen playScreen;
+    private Questions questions;
 
     public Engine(Frame frame) {
         this.frame = frame;
@@ -20,6 +21,7 @@ public class Engine {
             System.out.println(territory.getName());
             System.out.println(territory.getNeighboringTerritories());
         }
+        questions = new Questions();
     }
 
     public void getTerritoryData() {
@@ -61,5 +63,9 @@ public class Engine {
 
     public ArrayList<PlayerInfo> getPlayers() {
         return players;
+    }
+
+    public Questions getQuestions() {
+        return questions;
     }
 }

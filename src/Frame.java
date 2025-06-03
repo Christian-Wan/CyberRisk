@@ -12,7 +12,7 @@ public class Frame extends JFrame implements Runnable {
         this.add(engine.getPlayScreen());
         this.setTitle("Cyber Risk");
         this.setSize(FRAMEWIDTH, FRAMEHEIGHT);
-        this.setLocation(100, 100);
+        this.setLocation(20, 20);
         this.setResizable(false);
         this.setVisible(true);
         startThread();

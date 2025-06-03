@@ -38,16 +38,20 @@ public class Territory {
         }
     }
 
-    public void checkClick(Point clicked) {
+    public boolean checkClick(Point clicked) {
         if (hitBox.contains(clicked)
                 && engine.getPlayers().get(engine.getPlayScreen().getActivePlayer()) != playerOwner
                 && engine.getPlayScreen().isGameStart()
                 && checkNeighbors(engine.getPlayers().get(engine.getPlayScreen().getActivePlayer()))) {
-            System.out.println("Message");
-            engine.getPlayers().get(engine.getPlayScreen().getActivePlayer()).addTerritory(this);
-            playerOwner.removeTerritory(this);
-            playerOwner = engine.getPlayers().get(engine.getPlayScreen().getActivePlayer());
+            return true;
         }
+        return false;
+    }
+
+    public void changeOwner() {
+        engine.getPlayers().get(engine.getPlayScreen().getActivePlayer()).addTerritory(this);
+        playerOwner.removeTerritory(this);
+        playerOwner = engine.getPlayers().get(engine.getPlayScreen().getActivePlayer());
     }
 
     public void draw(Graphics2D g) {
@@ -68,7 +72,7 @@ public class Territory {
             g.fillRect(hitBox.x, hitBox.y, hitBox.width, hitBox.height);
             g.setColor(Color.BLACK);
             g.drawRect(hitBox.x, hitBox.y, hitBox.width, hitBox.height);
-            g.drawString(name, hitBox.x, hitBox.y);
+//            g.drawString(name, hitBox.x, hitBox.y);
         }
     }
 
